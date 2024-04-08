@@ -1,4 +1,4 @@
-# Exercicis de Base de Dades
+# M02 Base de Dades
 
 Aquest repositori conté els meus exercicis i pràctiques relacionats amb bases de dades.
 
