@@ -11,5 +11,3 @@ Aquest repositori conté els meus exercicis i pràctiques relacionats amb bases 
 ## Contacte
 
 Si tens alguna pregunta o suggeriment, no dubtis a obrir un **issue** o contactar-me directament.
-
-**Bona programació!** 🚀
