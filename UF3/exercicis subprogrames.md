@@ -145,7 +145,21 @@ Fes un procediment que donat un codi d’empleat, ens doni la informació de l�
 ### Exercici 7
 Volem fer un registre dels usuaris que entren al nostre sistema. Per fer-ho primer caldrà crear una taula amb dos camps, un per guardar l’usuari i l’altre per guardar la data i hora de l’accés.
 ```sql
+CREATE TABLE registre_usuaris (
+    usuari VARCHAR(100),
+    access DATETIME
+);
 
+DROP PROCEDURE IF EXISTS spRegistrarUsuari;
+DELIMITER //
+CREATE PROCEDURE spRegistrarUsuari()
+BEGIN
+    INSERT INTO registre_usuaris(usuari,access)
+        VALUES(CURRENT_USER(),NOW());
+END
+//
+
+CALL spRegistrarUsuari
 ```
 
 ### Exercici 8
@@ -163,7 +177,16 @@ Fes un procediment que ens permeti afegir un nou departament però amb la següe
 ### Exercici 10
 Fes un procediment que donat un codi d’empleat, ens posi en paràmetres de sortida el nom i el cognom. Indica com ho pots fer per comprovar si el procediment et funciona.
 ```sql
+DROP PROCEDURE IF EXISTS spRegistrarUsuari;
+DELIMITER //
+CREATE PROCEDURE spDadesEmpleat(IN pEmpleatId INT, OUT pEmpleatNom VARCHAR(20), OUT pEmpleatNom VARCHAR(20), OUT)
+BEGIN
+    SELECT nom, cognoms INTO pEmpleatId(usuari,access)
+        VALUES(CURRENT_USER(),NOW());
+END
+//
 
+CALL spRegistrarUsuari
 ```
 
 ### Exercici 11
@@ -207,7 +230,16 @@ La taula ha de tenir els següents camps:
 Fes un procediment amb nom **spRegistrarLog** que rebrà com a paràmetres el nom de la taula, l’acció i el valor_pk. 
 Aquest procediment només cal que insereixi un registre en la taula logs_usuaris amb les dades rebudes, tenint en compte l’usuari actual i la data-hora del sistema.
 ```sql
+DROP PROCEDURE IF EXISTS sp;
+DELIMITER //
+CREATE PROCEDURE spRegistrarUsuari()
+BEGIN
+    INSERT INTO registre_usuaris(usuari,access)
+        VALUES(CURRENT_USER(),NOW());
+END
+//
 
+CALL spRegistrarUsuari
 ```
 
 ### Exercici 13
